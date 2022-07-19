@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
+import { FaBars, FaTimes } from "react-icons/fa";
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
@@ -20,10 +20,14 @@ const NavMenu = styled.ul`
     background-color: rgba(0, 0, 0, 0.9);
     position: absolute;
     top: 0;
-    left: 0;
+    left: -100%;
     z-index: -3;
   }
 `;
+const NavMenuClicked = styled(NavMenu)`
+  left: 0;
+`;
+
 const NavMenuListItem = styled.li`
   padding: 0 1rem;
   font-size: 1.2rem;
@@ -34,26 +38,59 @@ const NavMenuListItem = styled.li`
   }
 `;
 
+const Hamburger = styled.div`
+  display: none;
+  @media (max-width: 1040px) {
+    display: initial;
+  }
+`;
+
 export const Navbar = () => {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => {
+    setClick(!click);
+  };
+
   return (
     <Header>
       <Link to="/">
         <h1>Portfolio</h1>
       </Link>
-      <NavMenu>
-        <NavMenuListItem>
-          <Link to="/">Home</Link>
-        </NavMenuListItem>
-        <NavMenuListItem>
-          <Link to="/project">Project</Link>
-        </NavMenuListItem>
-        <NavMenuListItem>
-          <Link to="/about">About</Link>
-        </NavMenuListItem>
-        <NavMenuListItem>
-          <Link to="/contact">Contact</Link>
-        </NavMenuListItem>
-      </NavMenu>
+      {click ? (
+        <NavMenuClicked>
+          <NavMenuListItem>
+            <Link to="/">Home</Link>
+          </NavMenuListItem>
+          <NavMenuListItem>
+            <Link to="/project">Project</Link>
+          </NavMenuListItem>
+          <NavMenuListItem>
+            <Link to="/about">About</Link>
+          </NavMenuListItem>
+          <NavMenuListItem>
+            <Link to="/contact">Contact</Link>
+          </NavMenuListItem>
+        </NavMenuClicked>
+      ) : (
+        <NavMenu>
+          <NavMenuListItem>
+            <Link to="/">Home</Link>
+          </NavMenuListItem>
+          <NavMenuListItem>
+            <Link to="/project">Project</Link>
+          </NavMenuListItem>
+          <NavMenuListItem>
+            <Link to="/about">About</Link>
+          </NavMenuListItem>
+          <NavMenuListItem>
+            <Link to="/contact">Contact</Link>
+          </NavMenuListItem>
+        </NavMenu>
+      )}
+      <Hamburger onClick={handleClick}>
+        {click ? <FaTimes size={20} style={{ color: "#fff" }} /> : <FaBars size={20} style={{ color: "#fff" }} />}
+      </Hamburger>
     </Header>
   );
 };

@@ -11,11 +11,27 @@ const Header = styled.div`
 
 const NavMenu = styled.ul`
   display: flex;
+  @media (max-width: 1040px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -3;
+  }
 `;
 const NavMenuListItem = styled.li`
   padding: 0 1rem;
   font-size: 1.2rem;
   font-weight: 500;
+  @media (max-width: 1040px) {
+    padding: 1rem 0;
+    font-size: 2rem;
+  }
 `;
 
 export const Navbar = () => {

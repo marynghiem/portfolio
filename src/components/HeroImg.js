@@ -18,7 +18,7 @@ const Mask = styled.div`
     top: 0;
     left: 0;
     background-color: #000;
-    opacity: 0.8;
+    opacity: 0.5;
   }
 `;
 const IntroImage = styled.img`
@@ -57,7 +57,7 @@ export const HeroImg = () => {
   return (
     <Hero>
       <Mask>
-        <IntroImage src="coding.jpeg" alt="coding image"></IntroImage>
+        <IntroImage src="coding2.jpg" alt="coding image"></IntroImage>
       </Mask>
       <Content>
         <p> HI, I'M A FREELANCER.</p>

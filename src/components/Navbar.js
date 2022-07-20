@@ -12,6 +12,10 @@ const Header = styled.div`
   height: 90px;
   z-index: 10;
 `;
+const HeaderBackground = styled(Header)`
+  background-color: rgba(0, 0, 0, 0.85);
+  transition: 0.5s;
+`;
 
 const NavMenu = styled.ul`
   display: flex;
@@ -51,50 +55,104 @@ const Hamburger = styled.div`
 
 export const Navbar = () => {
   const [click, setClick] = useState(false);
+  const [color, setColor] = useState(false);
 
   const handleClick = () => {
     setClick(!click);
   };
+  const changeColor = () => {
+    if (window.scrollY >= 100) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeColor);
 
   return (
-    <Header>
-      <Link to="/">
-        <h1>Portfolio</h1>
-      </Link>
-      {click ? (
-        <NavMenuClicked>
-          <NavMenuListItem>
-            <Link to="/">Home</Link>
-          </NavMenuListItem>
-          <NavMenuListItem>
-            <Link to="/project">Project</Link>
-          </NavMenuListItem>
-          <NavMenuListItem>
-            <Link to="/about">About</Link>
-          </NavMenuListItem>
-          <NavMenuListItem>
-            <Link to="/contact">Contact</Link>
-          </NavMenuListItem>
-        </NavMenuClicked>
+    <>
+      {color ? (
+        <HeaderBackground>
+          <Link to="/">
+            <h1>Portfolio</h1>
+          </Link>
+          {click ? (
+            <NavMenuClicked>
+              <NavMenuListItem>
+                <Link to="/">Home</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link to="/project">Project</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link to="/about">About</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link to="/contact">Contact</Link>
+              </NavMenuListItem>
+            </NavMenuClicked>
+          ) : (
+            <NavMenu>
+              <NavMenuListItem>
+                <Link to="/">Home</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link to="/project">Project</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link to="/about">About</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link to="/contact">Contact</Link>
+              </NavMenuListItem>
+            </NavMenu>
+          )}
+          <Hamburger onClick={handleClick}>
+            {click ? <FaTimes size={20} style={{ color: "#fff" }} /> : <FaBars size={20} style={{ color: "#fff" }} />}
+          </Hamburger>
+        </HeaderBackground>
       ) : (
-        <NavMenu>
-          <NavMenuListItem>
-            <Link to="/">Home</Link>
-          </NavMenuListItem>
-          <NavMenuListItem>
-            <Link to="/project">Project</Link>
-          </NavMenuListItem>
-          <NavMenuListItem>
-            <Link to="/about">About</Link>
-          </NavMenuListItem>
-          <NavMenuListItem>
-            <Link to="/contact">Contact</Link>
-          </NavMenuListItem>
-        </NavMenu>
+        <Header>
+          <Link to="/">
+            <h1>Portfolio</h1>
+          </Link>
+          {click ? (
+            <NavMenuClicked>
+              <NavMenuListItem>
+                <Link to="/">Home</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link to="/project">Project</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link to="/about">About</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link to="/contact">Contact</Link>
+              </NavMenuListItem>
+            </NavMenuClicked>
+          ) : (
+            <NavMenu>
+              <NavMenuListItem>
+                <Link to="/">Home</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link to="/project">Project</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link to="/about">About</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link to="/contact">Contact</Link>
+              </NavMenuListItem>
+            </NavMenu>
+          )}
+          <Hamburger onClick={handleClick}>
+            {click ? <FaTimes size={20} style={{ color: "#fff" }} /> : <FaBars size={20} style={{ color: "#fff" }} />}
+          </Hamburger>
+        </Header>
       )}
-      <Hamburger onClick={handleClick}>
-        {click ? <FaTimes size={20} style={{ color: "#fff" }} /> : <FaBars size={20} style={{ color: "#fff" }} />}
-      </Hamburger>
-    </Header>
+    </>
   );
 };

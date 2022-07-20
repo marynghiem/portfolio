@@ -7,6 +7,10 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  z-index: 10;
 `;
 
 const NavMenu = styled.ul`

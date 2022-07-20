@@ -37,11 +37,20 @@ const Content = styled.div`
   h1 {
     font-size: 4rem;
     padding: 0.6rem 0 1.5rem;
+    @media (max-width: 640px) {
+      font-size: 3rem;
+    }
   }
   p {
     font-size: 1.4rem;
     font-weight: 200;
     text-transform: uppercase;
+    @media (max-width: 640px) {
+      font-size: 1.4rem;
+    }
+  }
+  .btn {
+    margin: 1rem 0.2rem;
   }
 `;
 export const HeroImg = () => {

@@ -8,6 +8,15 @@ const HeroImgContainer = styled.div`
   position: relative;
   &:before {
     content: "";
+    background: url("https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
+    background-size: cover;
+    background-position: center top;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
   }
 `;
 const Heading = styled.div`

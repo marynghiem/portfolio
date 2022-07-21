@@ -20,6 +20,13 @@ const Mask = styled.div`
     background-color: #000;
     opacity: 0.5;
   }
+  h1 {
+    font-size: 2.4rem;
+  }
+  p {
+    font-size: 1.4rem;
+    text-align: center;
+  }
 `;
 const IntroImage = styled.img`
   width: 100%;
@@ -60,7 +67,7 @@ export const HeroImg = () => {
         <IntroImage src="coding2.jpg" alt="coding image"></IntroImage>
       </Mask>
       <Content>
-        <p> HI, I'M A FREELANCER.</p>
+        <p> HI, I'M A FRONTEND DEVELOPER.</p>
         <h1>React Developer.</h1>
         <Link to="/project" className="btn">
           Projects

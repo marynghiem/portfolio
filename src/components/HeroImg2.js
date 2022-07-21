@@ -18,6 +18,16 @@ const HeroImgContainer = styled.div`
     left: 0;
     z-index: -1;
   }
+  h1 {
+    font-size: 2.4rem;
+    @media (max-width: 640px) {
+      font-size: 2rem;
+    }
+  }
+  p {
+    font-size: 1.4rem;
+    text-align: center;
+  }
 `;
 const Heading = styled.div`
   width: 100%;
@@ -28,12 +38,12 @@ const Heading = styled.div`
   align-items: center;
 `;
 
-export const HeroImg2 = () => {
+export const HeroImg2 = ({ heading, text }) => {
   return (
     <HeroImgContainer>
       <Heading>
-        <h1>This is a heading</h1>
-        <p>This is a text</p>
+        <h1>{heading}</h1>
+        <p>{text}</p>
       </Heading>
     </HeroImgContainer>
   );

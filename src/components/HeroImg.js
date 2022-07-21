@@ -20,13 +20,6 @@ const Mask = styled.div`
     background-color: #000;
     opacity: 0.5;
   }
-  h1 {
-    font-size: 2.4rem;
-  }
-  p {
-    font-size: 1.4rem;
-    text-align: center;
-  }
 `;
 const IntroImage = styled.img`
   width: 100%;

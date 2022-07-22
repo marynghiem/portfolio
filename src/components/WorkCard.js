@@ -2,24 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const WorkContainer = styled.div``;
-const ProjectHeading = styled.h1`
-  text-align: center;
-  padding: 4rem 0 2rem 0;
-`;
-const ProjectContainer = styled.div`
-  max-width: 1140px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
-  padding-bottom: 5rem;
-  @media (max-width: 740px) {
-    max-width: 90%;
-    margin: auto;
-    grid-template-columns: 1fr;
-  }
-`;
 const ProjectCard = styled.div`
   background: #1a1919;
   padding: 1.2rem 1rem;
@@ -47,15 +29,15 @@ const ProjectButtons = styled.div`
   }
 `;
 
-export const WorkCard = () => {
+export const WorkCard = ({ imgsrc, title, text, view }) => {
   return (
     <ProjectCard>
-      <img src="coding.jpg" alt="image" />
-      <ProjectTitle>Project Title</ProjectTitle>
+      <img src={imgsrc} alt="image" />
+      <ProjectTitle>{title}</ProjectTitle>
       <ProjectDetails>
-        <p>This is text</p>
+        <p>{text}</p>
         <ProjectButtons>
-          <NavLink to="url.com" className="btn">
+          <NavLink to={view} className="btn">
             View
           </NavLink>
           <NavLink to="url.com" className="btn">

@@ -47,22 +47,11 @@ const ProjectButtons = styled.div`
   }
 `;
 
-export const WorkCard = () => {
+export const Work = () => {
   return (
-    <ProjectCard>
-      <img src="coding.jpg" alt="image" />
-      <ProjectTitle>Project Title</ProjectTitle>
-      <ProjectDetails>
-        <p>This is text</p>
-        <ProjectButtons>
-          <NavLink to="url.com" className="btn">
-            View
-          </NavLink>
-          <NavLink to="url.com" className="btn">
-            Source
-          </NavLink>
-        </ProjectButtons>
-      </ProjectDetails>
-    </ProjectCard>
+    <WorkContainer>
+      <ProjectHeading>Projects</ProjectHeading>
+      <ProjectContainer></ProjectContainer>
+    </WorkContainer>
   );
 };

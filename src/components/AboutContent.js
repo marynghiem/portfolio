@@ -4,6 +4,10 @@ import styled from "styled-components";
 
 const AboutContainer = styled.div``;
 const Left = styled.div``;
+const Right = styled.div``;
+const ImageContainer = styled.div``;
+const ImageStack = styled.div``;
+const Image = styled.img``;
 
 export const AboutContent = () => {
   return (
@@ -21,6 +25,16 @@ export const AboutContent = () => {
           <button className="btn">Contact</button>
         </Link>
       </Left>
+      <Right>
+        <ImageContainer>
+          <ImageStack className="top">
+            <Image src="coding.jpg" alt="true"></Image>
+          </ImageStack>
+          <ImageStack className="bottom">
+            <Image src="coding.jpg" alt="true"></Image>
+          </ImageStack>
+        </ImageContainer>
+      </Right>
     </AboutContainer>
   );
 };

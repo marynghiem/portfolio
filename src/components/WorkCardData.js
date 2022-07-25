@@ -19,7 +19,7 @@ export const WorkCardData = [
     view: "https://marys-food-recipes.herokuapp.com/",
   },
   {
-    imgsrc: "coding.jpg",
+    imgsrc: "calendar.png",
     title: "To Do List and Calendar",
     text: "",
     view: "https://github.com/marynghiem/ToDoList",

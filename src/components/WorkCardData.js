@@ -24,4 +24,10 @@ export const WorkCardData = [
     text: "",
     view: "https://github.com/marynghiem/ToDoList",
   },
+  {
+    imgsrc: "connect4.png",
+    title: "Connect Four",
+    text: "",
+    view: "https://github.com/marynghiem/ToDoList",
+  },
 ];

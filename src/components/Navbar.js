@@ -156,3 +156,8 @@ export const Navbar = () => {
     </>
   );
 };
+
+function getWindowSize() {
+  const { innerWidth, innerHeight } = window;
+  return { innerWidth, innerHeight };
+}

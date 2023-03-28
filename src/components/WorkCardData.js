@@ -30,4 +30,10 @@ export const WorkCardData = [
     text: "Built a Valentines themed Connect Four web application with heart-shaped tokens and CSS animations that show the token dropping when a player selects a column (React, CSS animations)",
     view: "https://github.com/marynghiem/ToDoList",
   },
+  {
+    imgsrc: "amazonproject.png",
+    title: "Amazon Clone",
+    text: "",
+    view: "clone-3ade4.web.app",
+  },
 ];

@@ -37,9 +37,9 @@ export const WorkCardData = [
     view: "clone-3ade4.web.app",
   },
   {
-    imgsrc: "amazonproject.png",
-    title: "Amazon Clone",
+    imgsrc: "chatapplication.png",
+    title: "Chat Application",
     text: "",
-    view: "clone-3ade4.web.app",
+    view: "https://chat-app-dd128.web.app/",
   },
 ];

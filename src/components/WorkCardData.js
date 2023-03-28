@@ -33,7 +33,7 @@ export const WorkCardData = [
   {
     imgsrc: "amazonproject.png",
     title: "Amazon Clone",
-    text: "",
+    text: "Created a Amazon clone using Material UI (responsive design), React, FireStore, and deployed using Firebase. Utilized Stripe API for money processing, and React flip move library for animations",
     view: "clone-3ade4.web.app",
   },
   {
@@ -41,5 +41,11 @@ export const WorkCardData = [
     title: "Chat Application",
     text: "",
     view: "https://chat-app-dd128.web.app/",
+  },
+  {
+    imgsrc: "spotifyproject.png",
+    title: "Spotify Clone",
+    text: "Created a Spotify clone using Material UI (responsive design), React, FireStore, and deployed using Firebase. Implemented user authentication with Spotify API and React flip move library for animations",
+    view: "",
   },
 ];
